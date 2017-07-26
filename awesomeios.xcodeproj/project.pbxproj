@@ -14,7 +14,6 @@
 		C06D60731F25D2CD006F11A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D60611F25D2CD006F11A5 /* Constants.swift */; };
 		C06D60741F25D2CD006F11A5 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D60621F25D2CD006F11A5 /* DBProvider.swift */; };
 		C06D60761F25D2CD006F11A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C06D60641F25D2CD006F11A5 /* GoogleService-Info.plist */; };
-		C06D60771F25D2CD006F11A5 /* HandlerForSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D60651F25D2CD006F11A5 /* HandlerForSeller.swift */; };
 		C06D60791F25D2CD006F11A5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C06D60671F25D2CD006F11A5 /* Info.plist */; };
 		C06D607A1F25D2CD006F11A5 /* Logomakr_6IJxJZ.png in Resources */ = {isa = PBXBuildFile; fileRef = C06D60681F25D2CD006F11A5 /* Logomakr_6IJxJZ.png */; };
 		C06D607E1F25D2CD006F11A5 /* RequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D606C1F25D2CD006F11A5 /* RequestVC.swift */; };
@@ -26,6 +25,7 @@
 		C06D608E1F25D30B006F11A5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D608B1F25D30B006F11A5 /* UIViewController.swift */; };
 		C06D60981F25D65A006F11A5 /* preVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06D60971F25D65A006F11A5 /* preVideoVC.swift */; };
 		C06D609C1F25D6EE006F11A5 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C06D609B1F25D6EE006F11A5 /* intro.mp4 */; };
+		C07BB5551F28EDF300F5DEF2 /* NirKxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C07BB5541F28EDF300F5DEF2 /* NirKxMenu.m */; };
 		C0DBFB2D1F266C860053CE24 /* img-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DBFB231F266C860053CE24 /* img-1.png */; };
 		C0DBFB2E1F266C860053CE24 /* img-10.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DBFB241F266C860053CE24 /* img-10.png */; };
 		C0DBFB2F1F266C860053CE24 /* img-11.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DBFB251F266C860053CE24 /* img-11.png */; };
@@ -87,6 +87,7 @@
 		5F615B1F1DFA37D9001D873B /* awesomeiosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = awesomeiosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BBABC5A76B97846F4AF5B6 /* Pods_awesomeiosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_awesomeiosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C29FE18BE117BA6DDEC215 /* Pods-awesomeiosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomeiosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomeiosUITests/Pods-awesomeiosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0259C381F28FEFA00FA771C /* awesomeios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "awesomeios-Bridging-Header.h"; sourceTree = "<group>"; };
 		C037E93710E935505B06D4B7 /* Pods-awesomeiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomeiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-awesomeiosTests/Pods-awesomeiosTests.release.xcconfig"; sourceTree = "<group>"; };
 		C06D605C1F25D2C2006F11A5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = awesomeios/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		C06D605E1F25D2CD006F11A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = awesomeios/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -94,7 +95,6 @@
 		C06D60611F25D2CD006F11A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = awesomeios/Constants.swift; sourceTree = SOURCE_ROOT; };
 		C06D60621F25D2CD006F11A5 /* DBProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBProvider.swift; path = awesomeios/DBProvider.swift; sourceTree = SOURCE_ROOT; };
 		C06D60641F25D2CD006F11A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "awesomeios/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C06D60651F25D2CD006F11A5 /* HandlerForSeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlerForSeller.swift; path = awesomeios/HandlerForSeller.swift; sourceTree = SOURCE_ROOT; };
 		C06D60671F25D2CD006F11A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = awesomeios/Info.plist; sourceTree = SOURCE_ROOT; };
 		C06D60681F25D2CD006F11A5 /* Logomakr_6IJxJZ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logomakr_6IJxJZ.png; path = awesomeios/Logomakr_6IJxJZ.png; sourceTree = SOURCE_ROOT; };
 		C06D606C1F25D2CD006F11A5 /* RequestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestVC.swift; path = awesomeios/RequestVC.swift; sourceTree = SOURCE_ROOT; };
@@ -106,6 +106,8 @@
 		C06D608B1F25D30B006F11A5 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C06D60971F25D65A006F11A5 /* preVideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = preVideoVC.swift; path = awesomeios/preVideoVC.swift; sourceTree = SOURCE_ROOT; };
 		C06D609B1F25D6EE006F11A5 /* intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro.mp4; sourceTree = "<group>"; };
+		C07BB5531F28EDF300F5DEF2 /* NirKxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NirKxMenu.h; sourceTree = "<group>"; };
+		C07BB5541F28EDF300F5DEF2 /* NirKxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NirKxMenu.m; sourceTree = "<group>"; };
 		C0DBFB231F266C860053CE24 /* img-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-1.png"; sourceTree = "<group>"; };
 		C0DBFB241F266C860053CE24 /* img-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-10.png"; sourceTree = "<group>"; };
 		C0DBFB251F266C860053CE24 /* img-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-11.png"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		5F615AF71DFA37D9001D873B = {
 			isa = PBXGroup;
 			children = (
+				C0259C381F28FEFA00FA771C /* awesomeios-Bridging-Header.h */,
 				5F615B021DFA37D9001D873B /* awesomeios */,
 				5F615B011DFA37D9001D873B /* Products */,
 				FBE3966D609D76224F059929 /* Pods */,
@@ -202,7 +205,6 @@
 				C06D60611F25D2CD006F11A5 /* Constants.swift */,
 				C06D60621F25D2CD006F11A5 /* DBProvider.swift */,
 				C06D60641F25D2CD006F11A5 /* GoogleService-Info.plist */,
-				C06D60651F25D2CD006F11A5 /* HandlerForSeller.swift */,
 				C06D60671F25D2CD006F11A5 /* Info.plist */,
 				C06D60681F25D2CD006F11A5 /* Logomakr_6IJxJZ.png */,
 				C06D606C1F25D2CD006F11A5 /* RequestVC.swift */,
@@ -247,6 +249,7 @@
 		C06D60891F25D30B006F11A5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C07BB5511F28EDF300F5DEF2 /* KxMenu */,
 				C0DBFB651F27227A0053CE24 /* String.swift */,
 				C0DBFB661F27227A0053CE24 /* UIColor.swift */,
 				C0DBFB671F27227A0053CE24 /* UIImage.swift */,
@@ -290,6 +293,16 @@
 				C06D609B1F25D6EE006F11A5 /* intro.mp4 */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		C07BB5511F28EDF300F5DEF2 /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C07BB5531F28EDF300F5DEF2 /* NirKxMenu.h */,
+				C07BB5541F28EDF300F5DEF2 /* NirKxMenu.m */,
+			);
+			name = KxMenu;
+			path = ../../../../Projects/AudioStream_Firebase_iOS/awesomeios/Extension/KxMenu;
 			sourceTree = "<group>";
 		};
 		C0DBFB221F266C860053CE24 /* Image */ = {
@@ -644,8 +657,8 @@
 				C06D60731F25D2CD006F11A5 /* Constants.swift in Sources */,
 				C0DBFB421F2718070053CE24 /* SideViewController.swift in Sources */,
 				C0DBFB6B1F27227A0053CE24 /* UIImage.swift in Sources */,
+				C07BB5551F28EDF300F5DEF2 /* NirKxMenu.m in Sources */,
 				C06D60811F25D2CD006F11A5 /* SpotLocationVC.swift in Sources */,
-				C06D60771F25D2CD006F11A5 /* HandlerForSeller.swift in Sources */,
 				C0DBFB4A1F271DE90053CE24 /* UIApplication.swift in Sources */,
 				C0DBFB401F26FAB70053CE24 /* RecordVC.swift in Sources */,
 				C0DBFB5F1F271FA50053CE24 /* UITableViewExtension.swift in Sources */,
@@ -817,6 +830,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3ee34ad7-7e74-4cfe-baa7-6ed0ae8337ca";
 				PROVISIONING_PROFILE_SPECIFIER = "XC iOS * Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "awesomeios-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -841,6 +855,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3ee34ad7-7e74-4cfe-baa7-6ed0ae8337ca";
 				PROVISIONING_PROFILE_SPECIFIER = "XC iOS * Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "awesomeios-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
