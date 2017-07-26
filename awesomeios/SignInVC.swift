@@ -2,6 +2,8 @@
 
 import UIKit
 import FirebaseAuth
+import AVKit
+import AVFoundation
 
 class SignInVC: UIViewController {
 
@@ -10,19 +12,35 @@ class SignInVC: UIViewController {
     
     public let MAIN_SEGUE = "gotoMain"
 
+    var avPlayer: AVPlayer!
+    var avPlayerLayer: AVPlayerLayer!
+    var paused: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareVideoBackground()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        avPlayer.play()
+        paused = false
+        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        avPlayer.pause()
+        paused = true
+        
+    }
+    
+    func playerItemDidReachEnd(notification: Notification) {
+        let p: AVPlayerItem = notification.object as! AVPlayerItem
+        p.seek(to: kCMTimeZero)
     }
     
     @IBAction func LogIn(_ sender: Any) {
@@ -87,4 +105,30 @@ extension SignInVC: UITextFieldDelegate {
         
         return true
     }
+}
+extension SignInVC{
+    
+    fileprivate func prepareVideoBackground() {
+        guard let videoPath = Bundle.main.path(forResource: "intro", ofType:"mp4") else {
+            debugPrint("intro.mp4 not found")
+            return
+        }
+        avPlayer = AVPlayer(url: URL(fileURLWithPath: videoPath))
+        avPlayer.actionAtItemEnd = .none
+        avPlayer.isMuted = true
+        avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        avPlayer.volume = 0
+        avPlayer.actionAtItemEnd = .none
+        
+        avPlayerLayer.frame = view.layer.bounds
+        view.backgroundColor = .clear
+        view.layer.insertSublayer(avPlayerLayer, at: 0)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(playerItemDidReachEnd(notification:)),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: avPlayer.currentItem)
+    }
+    
 }

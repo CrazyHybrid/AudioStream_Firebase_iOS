@@ -18,6 +18,8 @@ class MusicListViewCell : UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var category: UILabel!
     
+    @IBOutlet weak var morebtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -41,6 +43,7 @@ class MusicListVC : UIViewController {
     var musicList = [[String: Any]]()
     
     let imageList = ["img-1.png", "img-2.png", "img-3.png", "img-4.png", "img-5.png", "img-10.png","img-11.png", "img-12.png", "img-13.png", "img-14.png"]
+    let usernameList = ["Smith jon", "Willey Steve", "Doe Jhon", "Michael Jackson", "Miley Cyrus", "Smith jon", "Doe Jhon", "Justin Bieber", "Willey Steve", "Michael Jackson"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -231,6 +234,47 @@ extension MusicListVC : JukeboxDelegate {
             }
         }
     }
+    
+    func onLike(_ sender: Any){
+        
+    }
+    
+    func onComment(_ sender: Any){
+        
+    }
+    
+    func onShare(_ sender: Any){
+        
+    }
+    
+    func OnClickMore( sender: UIButton) {
+        
+        let menuArray = [KxMenuItem.init(" like ", image: UIImage(named:"like"), target: self, action: #selector(MusicListVC.onLike(_:))),
+                         KxMenuItem.init(" comment ", image: UIImage(named:"comment"), target: self, action: #selector(MusicListVC.onComment(_:))),
+                         KxMenuItem.init(" share ", image: UIImage(named:"share"), target: self, action: #selector(MusicListVC.onShare(_:)))]
+        
+        
+        KxMenu.setTitleFont(UIFont(name: "HelveticaNeue", size: 17))
+        
+        //config
+        let options = OptionalConfiguration(arrowSize: 0,  //Indicates the arrow size
+            marginXSpacing: 7,
+            marginYSpacing: 7,
+            intervalSpacing: 25,
+            menuCornerRadius: 6,
+            maskToBackground: true,
+            shadowOfMenu: false,
+            hasSeperatorLine: true,
+            seperatorLineHasInsets: false,
+            textColor: Colour(R: 0, G: 0, B: 0),
+            menuBackgroundColor: Colour(R: 1, G: 1, B: 1)
+        )
+        
+        let frame = sender.superview?.convert(sender.frame, to: self.view)
+        
+        KxMenu.show(in: self.view, from: frame!, menuItems: menuArray, withOptions: options)
+        
+    }
 
 }
 
@@ -245,7 +289,8 @@ extension MusicListVC : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListViewCell", for: indexPath) as! MusicListViewCell
         
         cell.logo.image = UIImage(named: imageList[indexPath.row])
-        
+        cell.name.text = usernameList[indexPath.row]
+        cell.morebtn.addTarget(self, action: #selector(OnClickMore(sender:)), for: .touchUpInside)
         
         return cell
     }
@@ -260,13 +305,15 @@ extension MusicListVC : UITableViewDelegate {
         }
         
         jukebox = Jukebox(delegate: self, items: [
-                        JukeboxItem(URL: URL(string: "https://firebasestorage.googleapis.com/v0/b/awesomestream-532da.appspot.com/o/1501019386.m4a?alt=media&token=1d360d71-e430-4934-b4ba-4f3958e4ef49")!)
+                        JukeboxItem(URL: URL(string: "https://firebasestorage.googleapis.com/v0/b/awesomestream-532da.appspot.com/o/audiofiles%2Fsample.m4a?alt=media&token=437ecfb6-1bbf-462a-b9aa-ad0053b954f8")!)
             
                         ])!
         
         if jukebox != nil {
             playbtn.setImage(UIImage(named: "play"), for: UIControlState())
             selLogo.image = UIImage(named: imageList[indexPath.row])
+            selName.text = usernameList[indexPath.row]
+            
         }
     }
 }

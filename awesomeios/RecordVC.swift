@@ -11,7 +11,7 @@ import UIKit
 import AudioKit
 import Firebase
 
-class RecordVC: UIViewController {
+class RecordVC: UIViewController, AVAudioPlayerDelegate{
     
     @IBOutlet weak var readyLabel: UILabel!
     @IBOutlet private var inputPlot: AKNodeOutputPlot!
@@ -145,23 +145,49 @@ class RecordVC: UIViewController {
     
     @IBAction func onClickUploadToServer(_ sender: Any) {
         
-        player.play()
+//        player.play()
         print(player.audioFile)
         
-        let storageRef = FIRStorage.storage().reference().child(tempName)
+        let storageRef = FIRStorage.storage().reference().child("audiofiles").child(tempName)
+        
+        var audioData = Data()
         
         let fileUrl = player.audioFile.url
+            
+        do {
+            audioData = try Data(contentsOf: fileUrl)
+        } catch {
+            print("Error convert data from url")
+        }
         
-        storageRef.putFile( fileUrl, metadata: nil, completion: { (metadata, error) in
-                
+        let metaData = FIRStorageMetadata()
+        metaData.contentType = "audio/m4a"
+        
+        print(audioData)
+        
+        storageRef.putFile( fileUrl, metadata: metaData, completion: { (metadata, error) in
+            
             if let error = error {
                 print(error)
                 return
             } else {
                 let downloadUrl = metadata?.downloadURL()
                 let user = FIRAuth.auth()?.currentUser
-                
+                print(downloadUrl)
                 DBProvider.Instance.saveAudio(withID: (user?.uid)!, url: (downloadUrl?.absoluteString)!, category: "popular")
+                
+                do {
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryRecord)
+                    
+                    let audioPlayer = try AVAudioPlayer(contentsOf: downloadUrl!)
+                    
+                    audioPlayer.delegate = self
+                    audioPlayer.prepareToPlay()
+                    audioPlayer.play()
+                    
+                } catch let error {
+                    print(error.localizedDescription)
+                }
             }
         })
     } //https://firebasestorage.googleapis.com/v0/b/awesomestream-532da.appspot.com/o/musicurls%2F1501018910.m4a?alt=media&token=e2d37de7-f14e-47f7-8a69-3ed94b2eb120 downloadUrl	URL?	"https://firebasestorage.googleapis.com/v0/b/awesomestream-532da.appspot.com/o/1501019386.m4a?alt=media&token=1d360d71-e430-4934-b4ba-4f3958e4ef49"	some
