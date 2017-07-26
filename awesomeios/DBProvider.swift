@@ -57,7 +57,7 @@ class DBProvider {
     func saveAudio(withID: String, url: String, category: String) {
         let data: Dictionary<String, Any> = [Constants.STOREURL: url, Constants.CATEGORY: category, Constants.isRequester: true];
         
-        usersRef.child(withID).child(Constants.DATA).setValue(data); // save music url and info to DB
+        datasRef.child(withID).child(Constants.DATA).setValue(data); // save music url and info to DB
         
     }
 } // class
