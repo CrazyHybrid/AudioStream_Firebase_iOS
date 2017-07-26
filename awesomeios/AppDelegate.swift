@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "prevideoVC") as! preVideoViewController
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "signInVC") as! SignInVC
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "SideViewController") as! SideViewController
         
         let nvc: UINavigationController = UINavigationController(rootViewController: loginViewController)
