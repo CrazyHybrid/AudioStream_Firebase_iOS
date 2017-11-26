@@ -1,0 +1,10 @@
+# Created by https://github.com/jjr840430/VirtualShield-Mac.git
+### Swift ###
+# VirtualShield Swift Stack Base
+### Swift.macOS Stack ###
+*.DS_Store
+._*
+
+
+# Pod files
+/Pods
